@@ -5,13 +5,13 @@ import 'package:weather_bloc/bloc/weather_events.dart';
 import 'package:weather_bloc/models/weather.dart';
 
 class WeatherPage extends StatelessWidget {
-  late WeatherModel weather;
-  late String city;
   WeatherPage({
     Key? key,
     required this.weather,
     required this.city,
   }) : super(key: key);
+  late WeatherModel weather;
+  late String city;
 
   @override
   Widget build(BuildContext context) {

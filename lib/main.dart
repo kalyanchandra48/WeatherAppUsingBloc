@@ -29,7 +29,7 @@ class MyHomePage extends StatelessWidget {
   MyHomePage({Key? key}) : super(key: key);
 
   final TextEditingController textController = TextEditingController();
-  WeatherModel weather = WeatherModel();
+ final  WeatherModel weather = WeatherModel();
 
   @override
   Widget build(BuildContext context) {
