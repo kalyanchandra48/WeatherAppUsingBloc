@@ -39,7 +39,7 @@ class MyHomePage extends StatelessWidget {
         backgroundColor: const Color(0xff2C5D9B),
         title: const Text(
           'Weather App',
-          style: TextStyle(fontSize: 34, fontWeight: FontWeight.bold),
+          style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
         ),
       ),
       backgroundColor: Colors.blue,
