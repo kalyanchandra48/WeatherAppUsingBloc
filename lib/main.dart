@@ -52,7 +52,7 @@ class MyHomePage extends StatelessWidget {
         child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
           BlocBuilder<WeatherBloc, WeatherState>(
             builder: (context, state) {
-              if (state is WeatherIsNotSearched) {
+              if (state is WeatherIsNotSearchedState) {
                 return Column(
                   children: [
                     Container(
@@ -96,11 +96,11 @@ class MyHomePage extends StatelessWidget {
                         ))
                   ],
                 );
-              } else if (state is WeatherIsLoading) {
+              } else if (state is WeatherIsLoadingState) {
                 return const Center(
                   child: CircularProgressIndicator(),
                 );
-              } else if (state is WeatherIsLoaded) {
+              } else if (state is WeatherIsLoadedState) {
                 return WeatherPage(
                     weather: state.getWeather, city: textController.text);
               }

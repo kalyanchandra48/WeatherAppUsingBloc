@@ -2,17 +2,17 @@ import 'package:weather_bloc/models/weather.dart';
 
 class WeatherState {}
 
-class WeatherIsNotSearched extends WeatherState {}
+class WeatherIsNotSearchedState extends WeatherState {}
 
-class WeatherIsLoading extends WeatherState {
+class WeatherIsLoadingState extends WeatherState {
   final String text;
-  WeatherIsLoading(this.text);
+  WeatherIsLoadingState(this.text);
 }
 
-class WeatherIsLoaded extends WeatherState {
+class WeatherIsLoadedState extends WeatherState {
   final WeatherModel _weather;
 
-  WeatherIsLoaded(this._weather);
+  WeatherIsLoadedState(this._weather);
 
   WeatherModel get getWeather => _weather;
 }

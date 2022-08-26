@@ -5,19 +5,19 @@ import 'package:weather_bloc/models/weather.dart';
 import 'package:weather_bloc/resources/api_provider.dart';
 
 class WeatherBloc extends Bloc<WeatherEvent, WeatherState> {
-  WeatherBloc() : super(WeatherIsNotSearched()) {
+  WeatherBloc() : super(WeatherIsNotSearchedState()) {
     final ApiProvider apiProvider = ApiProvider();
 
     on<SearchWeatherEvent>((event, emit) async {
-      emit(WeatherIsLoading('Your Weather is Loading Please wait..'));
+      emit(WeatherIsLoadingState('Your Weather is Loading Please wait..'));
       try {
         WeatherModel response = await apiProvider.fetchWeather(event.city);
-        emit(WeatherIsLoaded(response));
+        emit(WeatherIsLoadedState(response));
       } catch (e) {
-        emit(WeatherIsNotSearched());
+        emit(WeatherIsNotSearchedState());
       }
     });
 
-    on<ResetWeatherEvent>((event, emit) => emit(WeatherIsNotSearched()));
+    on<ResetWeatherEvent>((event, emit) => emit(WeatherIsNotSearchedState()));
   }
 }
